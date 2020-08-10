@@ -7,20 +7,28 @@
   "jsnext:main": "build/index.es.js",
   "scripts": {
     "build": "rollup -c",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "jest --coverage",
+    "test:coverage": "open coverage/lcov-report/index.html"
   },
   "files": [
     "build"
   ],
-  "keywords": [],
+  "jest": {
+    "preset": "ts-jest",
+    "testEnvironment": "node"
+  }, 
+  "keywords": ["delia", "ts", "rules", "validation"],
   "author": "",
   "license": "ISC",
   "devDependencies": {
+    "@types/jest": "^26.0.9",
+    "jest": "^26.3.0",
     "rollup": "^2.23.1",
     "rollup-plugin-commonjs": "^10.1.0",
     "rollup-plugin-node-resolve": "^5.2.0",
     "rollup-plugin-peer-deps-external": "^2.2.3",
     "rollup-plugin-typescript2": "^0.27.2",
+    "ts-jest": "^26.1.4",
     "typescript": "^3.9.7"
   }
 }
