@@ -20,9 +20,9 @@ function passwordShouldBeSimilar(password: string, confirmationPassword: string)
 }
 
 function mustBeAtLeastNCharacters(length: number): ValidationRule {
-  const errorMessage = "Must be atleast 8 caracs"
+  const errorMessage = `Must be at least ${length} characters`
   return value => {
-    return value.length > length || errorMessage
+    return value.length >= length || errorMessage
   }
 }
 
