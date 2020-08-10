@@ -1,7 +1,7 @@
 {
-  "name": "ts-purerules",
+  "name": "@delia-solutions/ts-purerules",
   "version": "1.0.0",
-  "description": "",
+  "description": "TODO",
   "main": "build/index.js",
   "module": "build/index.es.js",
   "jsnext:main": "build/index.es.js",
@@ -17,7 +17,7 @@
     "rules",
     "validation"
   ],
-  "author": "",
+  "author": "Delia Solutions <tech@delia-solutions.com> (https://delia-solutions.com)",
   "license": "ISC",
   "devDependencies": {
     "@types/jest": "^26.0.9",
@@ -28,5 +28,14 @@
     "rollup-plugin-peer-deps-external": "^2.2.3",
     "rollup-plugin-typescript2": "^0.27.2",
     "typescript": "^3.9.7"
-  }
+  },
+  "dependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Delia-Solutions/ts-purerules.git"
+  },
+  "bugs": {
+    "url": "https://github.com/Delia-Solutions/ts-purerules/issues"
+  },
+  "homepage": "https://github.com/Delia-Solutions/ts-purerules#readme"
 }
