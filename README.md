@@ -1,0 +1,3 @@
+# ts-purerules
+
+TODO
