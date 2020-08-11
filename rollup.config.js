@@ -5,18 +5,9 @@ export default {
  input: 'src/index.ts', // our source file
  output: [
   {
-   file: pkg.main,
-   format: 'cjs'
-  },
-  {
-   file: pkg.module,
+   dir: 'dist',
    format: 'es' // the preferred format
   },
-  {
-   file: pkg.browser,
-   format: 'iife',
-   name: 'MyPackage' // the global which can be used in a browser
-  }
  ],
  external: [
   ...Object.keys(pkg.dependencies || {})
