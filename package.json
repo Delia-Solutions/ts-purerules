@@ -2,15 +2,11 @@
   "name": "@delia-solutions/ts-purerules",
   "version": "1.0.0",
   "description": "TODO",
-  "main": "build/index.js",
-  "module": "build/index.es.js",
-  "jsnext:main": "build/index.es.js",
+  "main": "dist/index.js",
+  "module": "dist/index.es.js",
   "scripts": {
-    "build": "rollup -c"
+    "build": "rollup -c && tsc"
   },
-  "files": [
-    "build"
-  ],
   "keywords": [
     "delia",
     "ts",
@@ -23,13 +19,10 @@
     "@types/jest": "^26.0.9",
     "eslint": "^7.6.0",
     "rollup": "^2.23.1",
-    "rollup-plugin-commonjs": "^10.1.0",
-    "rollup-plugin-node-resolve": "^5.2.0",
-    "rollup-plugin-peer-deps-external": "^2.2.3",
-    "rollup-plugin-typescript2": "^0.27.2",
-    "typescript": "^3.9.7"
+    "typescript": "^3.9.7",
+    "rollup-plugin-terser": "^7.0.0",
+    "rollup-plugin-typescript2": "^0.27.2"
   },
-  "dependencies": {},
   "repository": {
     "type": "git",
     "url": "git+https://github.com/Delia-Solutions/ts-purerules.git"

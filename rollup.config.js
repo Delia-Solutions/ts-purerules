@@ -1,36 +1,30 @@
-import typescript from 'rollup-plugin-typescript2'
-import commonjs from 'rollup-plugin-commonjs'
-import external from 'rollup-plugin-peer-deps-external'
-import resolve from 'rollup-plugin-node-resolve'
-
-import pkg from './package.json'
-
+import typescript from 'rollup-plugin-typescript2';
+import pkg from './package.json';
+import {terser} from "rollup-plugin-terser";
 export default {
-  input: 'src/index.ts',
-  output: [
-    {
-      file: pkg.main,
-      format: 'cjs',
-      exports: 'named',
-      sourcemap: true
-    },
-    {
-      file: pkg.module,
-      format: 'es',
-      exports: 'named',
-      sourcemap: true
-    }
-  ],
-  plugins: [
-    external(),
-    resolve(),
-    typescript({
-      rollupCommonJSResolveHack: true,
-      exclude: '**/__tests__/**',
-      clean: true
-    }),
-    commonjs({
-      include: ['node_modules/**']
-    })
-  ]
-}
+ input: 'src/index.ts', // our source file
+ output: [
+  {
+   file: pkg.main,
+   format: 'cjs'
+  },
+  {
+   file: pkg.module,
+   format: 'es' // the preferred format
+  },
+  {
+   file: pkg.browser,
+   format: 'iife',
+   name: 'MyPackage' // the global which can be used in a browser
+  }
+ ],
+ external: [
+  ...Object.keys(pkg.dependencies || {})
+ ],
+ plugins: [
+  typescript({
+   typescript: require('typescript'),
+  }),
+  terser() // minifies generated bundles
+ ]
+};
