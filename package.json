@@ -6,7 +6,8 @@
   "module": "dist/index.es.js",
   "types": "dist/index.d.ts",
   "scripts": {
-    "build": "rollup -c && tsc"
+    "build": "rollup -c && tsc",
+    "test": ""
   },
   "keywords": [
     "delia",
@@ -17,7 +18,6 @@
   "author": "Delia Solutions <tech@delia-solutions.com> (https://delia-solutions.com)",
   "license": "ISC",
   "devDependencies": {
-    "@types/jest": "^26.0.9",
     "eslint": "^7.6.0",
     "rollup": "^2.23.1",
     "typescript": "^3.9.7",
