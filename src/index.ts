@@ -1,25 +1,17 @@
-export type ValidationRule = (value: any) => true | false;
-
-function emailMustBeValid(): ValidationRule {
-  return value => {
-    return /.+@.+/.test(value) || false
-  }
+function emailMustBeValid(value: string): boolean {
+  return /.+@.+/.test(value) || false
 }
 
-function stringMustNotBeEmpty(): ValidationRule {
-  return value => {
-    return value !== '' || false
-  }
+function stringMustNotBeEmpty(value: string): boolean {
+  return value !== '' || false
 }
 
-function passwordShouldBeSimilar(password: string, confirmationPassword: string): boolean | string {
+function passwordShouldBeSimilar(password: string, confirmationPassword: string): boolean {
   return password === confirmationPassword || false
 }
 
-function mustBeAtLeastNCharacters(length: number): ValidationRule {
-  return value => {
-    return value.length >= length || false
-  }
+function mustBeAtLeastNCharacters(value: string, length: number): boolean {
+  return value.length >= length || false
 }
 
 export {
