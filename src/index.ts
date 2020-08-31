@@ -1,28 +1,24 @@
-export type ValidationRule = (value: any) => true | string;
+export type ValidationRule = (value: any) => true | false;
 
 function emailMustBeValid(): ValidationRule {
-  const errorMessage = "Email must be valid";
   return value => {
-    return /.+@.+/.test(value) || errorMessage
+    return /.+@.+/.test(value) || false
   }
 }
 
 function stringMustNotBeEmpty(): ValidationRule {
-  const errorMessage = "String must not be empty";
   return value => {
-    return value !== '' || errorMessage
+    return value !== '' || false
   }
 }
 
 function passwordShouldBeSimilar(password: string, confirmationPassword: string): boolean | string {
-  const errorMessage = "Password are not equal";
-  return password === confirmationPassword ? true : errorMessage
+  return password === confirmationPassword || false
 }
 
 function mustBeAtLeastNCharacters(length: number): ValidationRule {
-  const errorMessage = `Must be at least ${length} characters`
   return value => {
-    return value.length >= length || errorMessage
+    return value.length >= length || false
   }
 }
 
