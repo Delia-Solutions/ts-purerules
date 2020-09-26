@@ -1,3 +1,15 @@
+function arrayMustNotBeEmpty(value: Array<any>): boolean {
+  return value.length > 0
+}
+
+function objectMustNotBeEmpty(value: object): boolean {
+  return value && value !== {}
+}
+
+function numberMustBeMin(value: number, length: number): boolean {
+  return value && value >= length ? true : false
+}
+
 function emailMustBeValid(value: string): boolean {
   return /.+@.+/.test(value) || false
 }
@@ -18,5 +30,8 @@ export {
   emailMustBeValid,
   stringMustNotBeEmpty,
   passwordShouldBeSimilar,
-  mustBeAtLeastNCharacters
+  mustBeAtLeastNCharacters,
+  numberMustBeMin,
+  objectMustNotBeEmpty,
+  arrayMustNotBeEmpty
 }
