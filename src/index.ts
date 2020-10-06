@@ -10,8 +10,9 @@ function numberMustBeMin(value: number, length: number): boolean {
   return value && value >= length ? true : false;
 }
 
-function objectMustNotBeEmpty(value: object): boolean {
-  return value && value !== {};
+function objectMustNotBeEmpty(value: any): boolean {
+  const keys = Object.keys(value);
+  return value.toString() === '[object Object]' && keys.length !== 0;
 }
 
 function stringMustBeAtLeastNCharacters(value: string, length: number): boolean {
