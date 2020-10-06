@@ -35,4 +35,4 @@ export {
   objectMustNotBeEmpty,
   passwordShouldBeSimilar,
   stringMustNotBeEmpty,
-}
+};
