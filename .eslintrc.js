@@ -25,6 +25,7 @@ module.exports = {
     'array-element-newline': ['warn', 'consistent'],
     'block-spacing': ['warn'],
     'brace-style': ['warn'],
+    'comma-dangle': ['error', 'always-multiline'],
     'comma-spacing': ['warn'],
     'comma-style': ['warn'],
     'eol-last': ['warn'],
