@@ -13,9 +13,10 @@ describe("Arrays", () => {
 
 describe("Objects", () => {
   it("object must not be empty", () => {
-    expect(lib.objectMustNotBeEmpty([1, 2, 3])).toBe(true);
+    expect(lib.objectMustNotBeEmpty({ hello: 4 })).toBe(true);
     expect(lib.objectMustNotBeEmpty({})).toBe(false);
-    expect(lib.objectMustNotBeEmpty([""])).toBe(true);
+    expect(lib.objectMustNotBeEmpty([1, 2, 3])).toBe(false);
+    expect(lib.objectMustNotBeEmpty([""])).toBe(false);
     expect(lib.objectMustNotBeEmpty([])).toBe(false);
     expect(lib.objectMustNotBeEmpty(new Array)).toBe(false);
     expect(lib.objectMustNotBeEmpty(new Object)).toBe(false);
