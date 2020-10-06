@@ -6,10 +6,6 @@ function emailMustBeValid(value: string): boolean {
   return /.+@.+/.test(value) || false;
 }
 
-function mustBeAtLeastNCharacters(value: string, length: number): boolean {
-  return value.length >= length || false;
-}
-
 function numberMustBeMin(value: number, length: number): boolean {
   return value && value >= length ? true : false;
 }
@@ -18,8 +14,12 @@ function objectMustNotBeEmpty(value: object): boolean {
   return value && value !== {};
 }
 
-function passwordShouldBeSimilar(password: string, confirmationPassword: string): boolean {
-  return password === confirmationPassword || false;
+function stringMustBeAtLeastNCharacters(value: string, length: number): boolean {
+  return value.length >= length || false;
+}
+
+function stringMustBeSimilarTo(value: string, other: string): boolean {
+  return value === other || false;
 }
 
 function stringMustNotBeEmpty(value: string): boolean {
@@ -30,9 +30,9 @@ function stringMustNotBeEmpty(value: string): boolean {
 export {
   arrayMustNotBeEmpty,
   emailMustBeValid,
-  mustBeAtLeastNCharacters,
   numberMustBeMin,
   objectMustNotBeEmpty,
-  passwordShouldBeSimilar,
+  stringMustBeAtLeastNCharacters,
+  stringMustBeSimilarTo,
   stringMustNotBeEmpty,
 };

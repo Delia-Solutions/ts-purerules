@@ -24,18 +24,18 @@ describe("Objects", () => {
 
 
 describe("Strings", () => {
-  it("must be at least N characters", () => {
-    expect(lib.mustBeAtLeastNCharacters("hello", 3)).toBe(true);
-    expect(lib.mustBeAtLeastNCharacters("hello", 8)).toBe(false);
-    expect(lib.mustBeAtLeastNCharacters("", 0)).toBe(true);
-    expect(lib.mustBeAtLeastNCharacters("", 4)).toBe(false);
+  it("string must be at least N characters", () => {
+    expect(lib.stringMustBeAtLeastNCharacters("hello", 3)).toBe(true);
+    expect(lib.stringMustBeAtLeastNCharacters("hello", 8)).toBe(false);
+    expect(lib.stringMustBeAtLeastNCharacters("", 0)).toBe(true);
+    expect(lib.stringMustBeAtLeastNCharacters("", 4)).toBe(false);
   });
 
-  it("password should be similar to", () => {
-    expect(lib.passwordShouldBeSimilar("hello", "hello")).toBe(true);
-    expect(lib.passwordShouldBeSimilar("hello", "yes")).toBe(false);
-    expect(lib.passwordShouldBeSimilar("", "")).toBe(true);
-    expect(lib.passwordShouldBeSimilar("", "hi you")).toBe(false);
+  it("string must be similar to", () => {
+    expect(lib.stringMustBeSimilarTo("hello", "hello")).toBe(true);
+    expect(lib.stringMustBeSimilarTo("hello", "yes")).toBe(false);
+    expect(lib.stringMustBeSimilarTo("", "")).toBe(true);
+    expect(lib.stringMustBeSimilarTo("", "hi you")).toBe(false);
   });
 
   it("string must not be empty", () => {
