@@ -8,7 +8,7 @@
   "scripts": {
     "build": "rollup -c && tsc",
     "lint": "eslint src --fix --ext .js,.ts",
-    "test": ""
+    "test": "jest -c jest.config.js tests"
   },
   "keywords": [
     "delia",
