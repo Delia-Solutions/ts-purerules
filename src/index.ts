@@ -1,5 +1,8 @@
 function arrayMustNotBeEmpty(value: Array<any>): boolean {
-  return value.length > 0;
+  return (Array
+    .from(value)
+    .filter(elt => elt !== undefined)
+    .length) > 0;
 }
 
 function emailMustBeValid(value: string): boolean {

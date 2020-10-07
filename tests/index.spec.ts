@@ -7,6 +7,9 @@ describe("Arrays", () => {
     expect(lib.arrayMustNotBeEmpty([""])).toBe(true);
     expect(lib.arrayMustNotBeEmpty([])).toBe(false);
     expect(lib.arrayMustNotBeEmpty(new Array)).toBe(false);
+    const a = [4];
+    delete a[0];
+    expect(lib.arrayMustNotBeEmpty(a)).toBe(false);
   });
 });
 
