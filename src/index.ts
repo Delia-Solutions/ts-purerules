@@ -10,7 +10,7 @@ function emailMustBeValid(value: string): boolean {
 }
 
 function numberMustBeMin(value: number, length: number): boolean {
-  return !!value && value >= length;
+  return value >= length;
 }
 
 function objectMustNotBeEmpty(value: any): boolean {
