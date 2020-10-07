@@ -6,11 +6,11 @@ function arrayMustNotBeEmpty(value: Array<any>): boolean {
 }
 
 function emailMustBeValid(value: string): boolean {
-  return /.+@.+/.test(value) || false;
+  return /.+@.+/.test(value);
 }
 
 function numberMustBeMin(value: number, length: number): boolean {
-  return value && value >= length ? true : false;
+  return !!value && value >= length;
 }
 
 function objectMustNotBeEmpty(value: any): boolean {
@@ -19,15 +19,15 @@ function objectMustNotBeEmpty(value: any): boolean {
 }
 
 function stringMustBeAtLeastNCharacters(value: string, length: number): boolean {
-  return value.length >= length || false;
+  return value.length >= length;
 }
 
 function stringMustBeSimilarTo(value: string, other: string): boolean {
-  return value === other || false;
+  return value === other;
 }
 
 function stringMustNotBeEmpty(value: string): boolean {
-  return value !== '' || false;
+  return value !== '';
 }
 
 
