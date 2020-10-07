@@ -14,6 +14,20 @@ describe("Arrays", () => {
 });
 
 
+describe("Numbers", () => {
+  it("number must be min", () => {
+    expect(lib.numberMustBeMin(5, 3)).toBe(true);
+    expect(lib.numberMustBeMin(3, 4)).toBe(false);
+    expect(lib.numberMustBeMin(2, 2)).toBe(true);
+    expect(lib.numberMustBeMin(-1, -13)).toBe(true);
+    expect(lib.numberMustBeMin(1.3443, 1)).toBe(true);
+    expect(lib.numberMustBeMin(-1.1, -1)).toBe(false);
+    expect(lib.numberMustBeMin(0, 8)).toBe(false);
+    expect(lib.numberMustBeMin(0, -2)).toBe(true);
+  });
+});
+
+
 describe("Objects", () => {
   it("object must not be empty", () => {
     expect(lib.objectMustNotBeEmpty({ hello: 4 })).toBe(true);
