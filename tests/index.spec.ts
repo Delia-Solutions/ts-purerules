@@ -44,6 +44,7 @@ describe("Strings", () => {
 
   it("string must not be empty", () => {
     expect(lib.stringMustNotBeEmpty("hello")).toBe(true);
+    expect(lib.stringMustNotBeEmpty("0")).toBe(true);
     expect(lib.stringMustNotBeEmpty("")).toBe(false);
     expect(lib.stringMustNotBeEmpty('')).toBe(false);
   });
