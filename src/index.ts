@@ -30,6 +30,12 @@ function stringMustNotBeEmpty(value: string): boolean {
   return value !== '';
 }
 
+function isLeapYear(year: string | number): boolean {
+  // if year is a string, we need to cast the value to number
+  const formattedYear = typeof year === 'string' ? +year : year;
+  return (formattedYear % 4 === 0 && formattedYear % 100 !== 0) || formattedYear % 400 === 0;
+}
+
 
 export {
   arrayMustNotBeEmpty,
@@ -39,4 +45,5 @@ export {
   stringMustBeAtLeastNCharacters,
   stringMustBeSimilarTo,
   stringMustNotBeEmpty,
+  isLeapYear,
 };
