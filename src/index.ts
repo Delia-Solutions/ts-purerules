@@ -6,6 +6,10 @@ function arrayMustNotBeEmpty(value: Array<any>): boolean {
 }
 
 function emailMustBeValid(value: string): boolean {
+  /* This regex comes from
+     http://emailregex.com/
+     It matches 99.99% of MODERN email addresses.
+  */
   const re = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
   return re.test(value);
 }
