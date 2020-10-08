@@ -62,4 +62,15 @@ describe("Strings", () => {
     expect(lib.stringMustNotBeEmpty("")).toBe(false);
     expect(lib.stringMustNotBeEmpty('')).toBe(false);
   });
+
+  it("string must be an email", () => {
+    expect(lib.emailMustBeValid("hello@delia-solutions.com")).toBe(true);
+    expect(lib.emailMustBeValid("hello55@delia-solutions.com")).toBe(true);
+    expect(lib.emailMustBeValid("hello.55@delia-solutions.com")).toBe(true);
+    expect(lib.emailMustBeValid("hello@gmaiil.com")).toBe(true);
+    expect(lib.emailMustBeValid("hellogmaiil.com")).toBe(false);
+    expect(lib.emailMustBeValid("hello@gmaiilcom")).toBe(false);
+    expect(lib.emailMustBeValid("hello@@@@@@gmaiilcom")).toBe(false);
+    expect(lib.emailMustBeValid("hellogmaiilcom")).toBe(false);
+  });
 });
