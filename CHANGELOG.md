@@ -4,6 +4,7 @@
 ### 2.0.1
 **Breaking changes:**
 Rename some rules:
+   - `emailMustBeValid` -> `stringMustBeValidEmail`
    - `mustBeAtLeastNCharacters` -> `stringMustBeAtLeastNCharacters`
    - `passwordShouldBeSimilar` -> `stringMustBeSimilarTo`
 

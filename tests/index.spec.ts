@@ -71,13 +71,18 @@ describe('Strings', () => {
   });
 
   it('string must be an email', () => {
-    expect(lib.emailMustBeValid('hello@delia-solutions.com')).toBe(true);
-    expect(lib.emailMustBeValid('hello55@delia-solutions.com')).toBe(true);
-    expect(lib.emailMustBeValid('hello.55@delia-solutions.com')).toBe(true);
-    expect(lib.emailMustBeValid('hello@gmaiil.com')).toBe(true);
-    expect(lib.emailMustBeValid('hellogmaiil.com')).toBe(false);
-    expect(lib.emailMustBeValid('hello@gmaiilcom')).toBe(false);
-    expect(lib.emailMustBeValid('hello@@@@@@gmaiilcom')).toBe(false);
-    expect(lib.emailMustBeValid('hellogmaiilcom')).toBe(false);
+    expect(lib.stringMustBeValidEmail('hello@delia-solutions.com')).toBe(true);
+    expect(lib.stringMustBeValidEmail('hello55@delia-solutions.com')).toBe(true);
+    expect(lib.stringMustBeValidEmail('hello.55@delia-solutions.com')).toBe(true);
+    expect(lib.stringMustBeValidEmail('hello@gmaiil.com')).toBe(true);
+    expect(lib.stringMustBeValidEmail('hellogmaiil.com')).toBe(false);
+    expect(lib.stringMustBeValidEmail('hello@gmaiilcom')).toBe(false);
+    expect(lib.stringMustBeValidEmail('hello@@@@@@gmaiilcom')).toBe(false);
+    expect(lib.stringMustBeValidEmail('hellogmaiilcom')).toBe(false);
+    expect(lib.stringMustBeValidEmail('hello@gmail')).toBe(false);
+    expect(lib.stringMustBeValidEmail('he-llo@gmail.com')).toBe(true);
+    expect(lib.stringMustBeValidEmail('he.llo@gmail.com')).toBe(true);
+    expect(lib.stringMustBeValidEmail('h.e-l.lo@gmail.com')).toBe(true);
+    expect(lib.stringMustBeValidEmail('.llo@gmail.com')).toBe(false);
   });
 });

@@ -5,8 +5,13 @@ function arrayMustNotBeEmpty(value: Array<any>): boolean {
     .length) > 0;
 }
 
-function emailMustBeValid(value: string): boolean {
-  return /.+@.+/.test(value);
+function stringMustBeValidEmail(value: string): boolean {
+  /* This regex comes from
+     http://emailregex.com/
+     It matches 99.99% of MODERN email addresses.
+  */
+  const re = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+  return re.test(value);
 }
 
 function numberMustBeMin(value: number, length: number): boolean {
@@ -39,7 +44,7 @@ function isLeapYear(year: string | number): boolean {
 
 export {
   arrayMustNotBeEmpty,
-  emailMustBeValid,
+  stringMustBeValidEmail,
   numberMustBeMin,
   objectMustNotBeEmpty,
   stringMustBeAtLeastNCharacters,
