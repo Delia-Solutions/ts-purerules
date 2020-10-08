@@ -1,10 +1,10 @@
-import * as lib from "../src/index";
+import * as lib from '../src/index';
 
 
-describe("Arrays", () => {
-  it("array must not be empty", () => {
+describe('Arrays', () => {
+  it('array must not be empty', () => {
     expect(lib.arrayMustNotBeEmpty([1, 2, 3])).toBe(true);
-    expect(lib.arrayMustNotBeEmpty([""])).toBe(true);
+    expect(lib.arrayMustNotBeEmpty([''])).toBe(true);
     expect(lib.arrayMustNotBeEmpty([])).toBe(false);
     expect(lib.arrayMustNotBeEmpty(new Array)).toBe(false);
     const a = [4];
@@ -14,8 +14,8 @@ describe("Arrays", () => {
 });
 
 
-describe("Numbers", () => {
-  it("number must be min", () => {
+describe('Numbers', () => {
+  it('number must be min', () => {
     expect(lib.numberMustBeMin(5, 3)).toBe(true);
     expect(lib.numberMustBeMin(3, 4)).toBe(false);
     expect(lib.numberMustBeMin(2, 2)).toBe(true);
@@ -28,12 +28,12 @@ describe("Numbers", () => {
 });
 
 
-describe("Objects", () => {
-  it("object must not be empty", () => {
+describe('Objects', () => {
+  it('object must not be empty', () => {
     expect(lib.objectMustNotBeEmpty({ hello: 4 })).toBe(true);
     expect(lib.objectMustNotBeEmpty({})).toBe(false);
     expect(lib.objectMustNotBeEmpty([1, 2, 3])).toBe(false);
-    expect(lib.objectMustNotBeEmpty([""])).toBe(false);
+    expect(lib.objectMustNotBeEmpty([''])).toBe(false);
     expect(lib.objectMustNotBeEmpty([])).toBe(false);
     expect(lib.objectMustNotBeEmpty(new Array)).toBe(false);
     expect(lib.objectMustNotBeEmpty(new Object)).toBe(false);
@@ -41,41 +41,41 @@ describe("Objects", () => {
 });
 
 
-describe("Strings", () => {
-  it("string must be at least N characters", () => {
-    expect(lib.stringMustBeAtLeastNCharacters("hello", 3)).toBe(true);
-    expect(lib.stringMustBeAtLeastNCharacters("hello", 8)).toBe(false);
-    expect(lib.stringMustBeAtLeastNCharacters("", 0)).toBe(true);
-    expect(lib.stringMustBeAtLeastNCharacters("", 4)).toBe(false);
+describe('Strings', () => {
+  it('string must be at least N characters', () => {
+    expect(lib.stringMustBeAtLeastNCharacters('hello', 3)).toBe(true);
+    expect(lib.stringMustBeAtLeastNCharacters('hello', 8)).toBe(false);
+    expect(lib.stringMustBeAtLeastNCharacters('', 0)).toBe(true);
+    expect(lib.stringMustBeAtLeastNCharacters('', 4)).toBe(false);
   });
 
-  it("string must be similar to", () => {
-    expect(lib.stringMustBeSimilarTo("hello", "hello")).toBe(true);
-    expect(lib.stringMustBeSimilarTo("hello", "yes")).toBe(false);
-    expect(lib.stringMustBeSimilarTo("", "")).toBe(true);
-    expect(lib.stringMustBeSimilarTo("", "hi you")).toBe(false);
+  it('string must be similar to', () => {
+    expect(lib.stringMustBeSimilarTo('hello', 'hello')).toBe(true);
+    expect(lib.stringMustBeSimilarTo('hello', 'yes')).toBe(false);
+    expect(lib.stringMustBeSimilarTo('', '')).toBe(true);
+    expect(lib.stringMustBeSimilarTo('', 'hi you')).toBe(false);
   });
 
-  it("string must not be empty", () => {
-    expect(lib.stringMustNotBeEmpty("hello")).toBe(true);
-    expect(lib.stringMustNotBeEmpty("0")).toBe(true);
-    expect(lib.stringMustNotBeEmpty("")).toBe(false);
+  it('string must not be empty', () => {
+    expect(lib.stringMustNotBeEmpty('hello')).toBe(true);
+    expect(lib.stringMustNotBeEmpty('0')).toBe(true);
+    expect(lib.stringMustNotBeEmpty('')).toBe(false);
     expect(lib.stringMustNotBeEmpty('')).toBe(false);
   });
 
-  it("string must be an email", () => {
-    expect(lib.emailMustBeValid("hello@delia-solutions.com")).toBe(true);
-    expect(lib.emailMustBeValid("hello55@delia-solutions.com")).toBe(true);
-    expect(lib.emailMustBeValid("hello.55@delia-solutions.com")).toBe(true);
-    expect(lib.emailMustBeValid("hello@gmaiil.com")).toBe(true);
-    expect(lib.emailMustBeValid("hellogmaiil.com")).toBe(false);
-    expect(lib.emailMustBeValid("hello@gmaiilcom")).toBe(false);
-    expect(lib.emailMustBeValid("hello@@@@@@gmaiilcom")).toBe(false);
-    expect(lib.emailMustBeValid("hellogmaiilcom")).toBe(false);
-    expect(lib.emailMustBeValid("hello@gmail")).toBe(false);
-    expect(lib.emailMustBeValid("he-llo@gmail.com")).toBe(true);
-    expect(lib.emailMustBeValid("he.llo@gmail.com")).toBe(true);
-    expect(lib.emailMustBeValid("h.e-l.lo@gmail.com")).toBe(true);
-    expect(lib.emailMustBeValid(".llo@gmail.com")).toBe(false);
+  it('string must be an email', () => {
+    expect(lib.stringMustBeValidEmail('hello@delia-solutions.com')).toBe(true);
+    expect(lib.stringMustBeValidEmail('hello55@delia-solutions.com')).toBe(true);
+    expect(lib.stringMustBeValidEmail('hello.55@delia-solutions.com')).toBe(true);
+    expect(lib.stringMustBeValidEmail('hello@gmaiil.com')).toBe(true);
+    expect(lib.stringMustBeValidEmail('hellogmaiil.com')).toBe(false);
+    expect(lib.stringMustBeValidEmail('hello@gmaiilcom')).toBe(false);
+    expect(lib.stringMustBeValidEmail('hello@@@@@@gmaiilcom')).toBe(false);
+    expect(lib.stringMustBeValidEmail('hellogmaiilcom')).toBe(false);
+    expect(lib.stringMustBeValidEmail('hello@gmail')).toBe(false);
+    expect(lib.stringMustBeValidEmail('he-llo@gmail.com')).toBe(true);
+    expect(lib.stringMustBeValidEmail('he.llo@gmail.com')).toBe(true);
+    expect(lib.stringMustBeValidEmail('h.e-l.lo@gmail.com')).toBe(true);
+    expect(lib.stringMustBeValidEmail('.llo@gmail.com')).toBe(false);
   });
 });

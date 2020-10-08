@@ -5,7 +5,7 @@ function arrayMustNotBeEmpty(value: Array<any>): boolean {
     .length) > 0;
 }
 
-function emailMustBeValid(value: string): boolean {
+function stringMustBeValidEmail(value: string): boolean {
   /* This regex comes from
      http://emailregex.com/
      It matches 99.99% of MODERN email addresses.
@@ -38,7 +38,7 @@ function stringMustNotBeEmpty(value: string): boolean {
 
 export {
   arrayMustNotBeEmpty,
-  emailMustBeValid,
+  stringMustBeValidEmail,
   numberMustBeMin,
   objectMustNotBeEmpty,
   stringMustBeAtLeastNCharacters,
