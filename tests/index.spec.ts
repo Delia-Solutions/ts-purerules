@@ -27,6 +27,13 @@ describe('Numbers', () => {
   });
 });
 
+describe('Date', () => {
+  it('Check if a given year is a leap year', () => {
+    expect(lib.isLeapYear(2020)).toBe(true);
+    expect(lib.isLeapYear(2021)).toBe(false);
+  });
+});
+
 
 describe('Objects', () => {
   it('object must not be empty', () => {
