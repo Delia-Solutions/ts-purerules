@@ -7,7 +7,8 @@
   "types": "dist/index.d.ts",
   "scripts": {
     "build": "rollup -c && tsc",
-    "test": ""
+    "lint": "eslint src --fix --ext .js,.ts",
+    "test": "jest -c jest.config.js tests"
   },
   "keywords": [
     "delia",
@@ -18,10 +19,15 @@
   "author": "Delia Solutions <tech@delia-solutions.com> (https://delia-solutions.com)",
   "license": "ISC",
   "devDependencies": {
-    "eslint": "^7.6.0",
+    "@types/jest": "^26.0.14",
+    "@typescript-eslint/eslint-plugin": "^4.4.0",
+    "@typescript-eslint/parser": "^4.4.0",
+    "eslint": "^7.10.0",
+    "jest": "^26.5.0",
     "rollup": "^2.23.1",
     "rollup-plugin-terser": "^7.0.0",
     "rollup-plugin-typescript2": "^0.27.2",
+    "ts-jest": "^26.4.1",
     "typescript": "^3.9.7"
   },
   "repository": {
