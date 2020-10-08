@@ -72,5 +72,10 @@ describe("Strings", () => {
     expect(lib.emailMustBeValid("hello@gmaiilcom")).toBe(false);
     expect(lib.emailMustBeValid("hello@@@@@@gmaiilcom")).toBe(false);
     expect(lib.emailMustBeValid("hellogmaiilcom")).toBe(false);
+    expect(lib.emailMustBeValid("hello@gmail")).toBe(false);
+    expect(lib.emailMustBeValid("he-llo@gmail.com")).toBe(true);
+    expect(lib.emailMustBeValid("he.llo@gmail.com")).toBe(true);
+    expect(lib.emailMustBeValid("h.e-l.lo@gmail.com")).toBe(true);
+    expect(lib.emailMustBeValid(".llo@gmail.com")).toBe(false);
   });
 });
