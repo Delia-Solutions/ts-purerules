@@ -31,6 +31,10 @@ function stringMustBeSimilarTo(value: string, other: string): boolean {
   return value === other;
 }
 
+function stringMustBeDifferentTo(value: string, other: string): boolean {
+  return value !== other;
+}
+
 function stringMustNotBeEmpty(value: string): boolean {
   return value !== '';
 }
@@ -51,4 +55,5 @@ export {
   stringMustBeSimilarTo,
   stringMustNotBeEmpty,
   isLeapYear,
+  stringMustBeDifferentTo,
 };

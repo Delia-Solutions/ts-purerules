@@ -63,6 +63,13 @@ describe('Strings', () => {
     expect(lib.stringMustBeSimilarTo('', 'hi you')).toBe(false);
   });
 
+  it('string must be different to', () => {
+    expect(lib.stringMustBeDifferentTo('hello', 'hello')).toBe(false);
+    expect(lib.stringMustBeDifferentTo('hello', 'yes')).toBe(true);
+    expect(lib.stringMustBeDifferentTo('', '')).toBe(false);
+    expect(lib.stringMustBeDifferentTo('', 'hi you')).toBe(true);
+  });
+
   it('string must not be empty', () => {
     expect(lib.stringMustNotBeEmpty('hello')).toBe(true);
     expect(lib.stringMustNotBeEmpty('0')).toBe(true);
