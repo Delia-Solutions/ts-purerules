@@ -14,8 +14,18 @@ function stringMustBeValidEmail(value: string): boolean {
   return re.test(value);
 }
 
-function numberMustBeMin(value: number, length: number): boolean {
-  return value >= length;
+function numberMustBeMin(value: number, minValue: number): boolean {
+  return value >= minValue;
+}
+function numberMustBeMax(value: number, maxValue: number): boolean {
+  return maxValue >= value;
+}
+
+function numberMustBeStrictlyMin(value: number, minValue: number): boolean {
+  return value > minValue;
+}
+function numberMustBeStrictlyMax(value: number, maxValue: number): boolean {
+  return maxValue > value;
 }
 
 function objectMustNotBeEmpty(value: any): boolean {
@@ -51,4 +61,8 @@ export {
   stringMustBeSimilarTo,
   stringMustNotBeEmpty,
   isLeapYear,
+  stringMustBeDifferentTo,
+  numberMustBeMax,
+  numberMustBeStrictlyMin,
+  numberMustBeStrictlyMax,
 };
