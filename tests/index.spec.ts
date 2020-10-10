@@ -116,4 +116,10 @@ describe('Strings', () => {
     expect(lib.stringMustBeValidEmail('h.e-l.lo@gmail.com')).toBe(true);
     expect(lib.stringMustBeValidEmail('.llo@gmail.com')).toBe(false);
   });
+
+  it('string must be an IP', () => {
+    expect(lib.stringMustBeValidIpAddress('50.238.2.98')).toBe(true);
+    expect(lib.stringMustBeValidIpAddress('256.238.23.98')).toBe(false);
+    expect(lib.stringMustBeValidIpAddress('')).toBe(false);
+  });
 });
