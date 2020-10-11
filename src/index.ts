@@ -35,7 +35,7 @@ function stringMustNotBeEmpty(value: string): boolean {
   return value !== '';
 }
 
-function stringMustContains (value: string, contain: string | Array<string>): boolean {
+function stringMustContains(value: string, contain: string | Array<string>): boolean {
   if (Array.isArray(contain)) {
     return contain.every(v => value.includes(v));
   }
@@ -71,12 +71,12 @@ const checksumLuhn = (value: string, size: number): boolean => {
   return sum % 10 === 0;
 };
 
-function stringMustBeSIRET (value: string): boolean {
+function stringMustBeSIRET(value: string): boolean {
   const size = 14;
   return checksumLuhn(value, size);
 }
 
-function stringMustBeSIREN (value: string): boolean {
+function stringMustBeSIREN(value: string): boolean {
   const size = 9;
   return checksumLuhn(value, size);
 }
