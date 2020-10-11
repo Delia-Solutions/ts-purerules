@@ -98,4 +98,10 @@ describe('Strings', () => {
     expect(lib.stringMustContains('hello', ['hello', 'world'])).toBe(false);
     expect(lib.stringMustContains('hello world', 'hi')).toBe(false);
   });
+
+  it('string must be max', () => {
+    expect(lib.stringMustBeMax('hello world', 11)).toBe(true);
+    expect(lib.stringMustBeMax('hello world', 10)).toBe(false);
+    expect(lib.stringMustBeMax('', 0)).toBe(true);
+  });
 });

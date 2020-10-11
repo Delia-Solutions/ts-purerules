@@ -27,6 +27,10 @@ function stringMustBeAtLeastNCharacters(value: string, length: number): boolean 
   return value.length >= length;
 }
 
+function stringMustBeMax(value: string, length: number): boolean {
+  return value.length <= length;
+}
+
 function stringMustBeSimilarTo(value: string, other: string): boolean {
   return value === other;
 }
@@ -60,6 +64,7 @@ export {
   numberMustBeMin,
   stringMustContains,
   objectMustNotBeEmpty,
+  stringMustBeMax,
   stringMustBeAtLeastNCharacters,
   stringMustBeSimilarTo,
   stringMustNotBeEmpty,
