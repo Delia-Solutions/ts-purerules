@@ -53,6 +53,11 @@ function stringMustBeValidIPv4(value: string) {
   return re.test(value);
 }
 
+/**
+ * Performs a Luhn checksum.
+ * Used in the computation of the SIRET and SIREN numbers.
+ * See: https://en.wikipedia.org/wiki/Luhn_algorithm
+ */
 const checksumLuhn = (value: string, size: number): boolean => {
   const check = value.replace(/ /g, '');
   if (check.length < size) return false;
