@@ -53,6 +53,33 @@ function stringMustBeValidIpAddress (value: string) {
   return re.test(value);
 }
 
+const checksumLuhn = (value: string, size: number): boolean => {
+  const check = value.replace(/ /g, '');
+  if (check.length < size) return false;
+  const parity = size % 2;
+  let sum = 0;
+  for (let i = size - 1; i >= 0; i--) {
+    let d = parseInt(check.charAt(i));
+    if (i % 2 === parity) {
+      d *= 2;
+    }
+    if (d > 9) {
+      d -= 9;
+    }
+    sum += d;
+  }
+  return sum % 10 === 0;
+};
+
+function stringMustBeSIRET (value: string): boolean {
+  const size = 14;
+  return checksumLuhn(value, size);
+}
+
+function stringMustBeSIREN (value: string): boolean {
+  const size = 9;
+  return checksumLuhn(value, size);
+}
 
 export {
   arrayMustNotBeEmpty,
@@ -63,6 +90,8 @@ export {
   stringMustBeAtLeastNCharacters,
   stringMustBeSimilarTo,
   stringMustNotBeEmpty,
+  stringMustBeSIRET,
+  stringMustBeSIREN,
   isLeapYear,
   stringMustBeValidIpAddress,
 };

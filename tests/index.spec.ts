@@ -98,4 +98,15 @@ describe('Strings', () => {
     expect(lib.stringMustContains('hello', ['hello', 'world'])).toBe(false);
     expect(lib.stringMustContains('hello world', 'hi')).toBe(false);
   });
+
+  it('string must be SIRET', () => {
+    expect(lib.stringMustBeSIRET('73282932000074')).toBe(true);
+    expect(lib.stringMustBeSIRET('732 829 320 000 74')).toBe(true);
+    expect(lib.stringMustBeSIRET('73282932100074')).toBe(false);
+  });
+  it('string must be SIREN', () => {
+    expect(lib.stringMustBeSIREN('123456782')).toBe(true);
+    expect(lib.stringMustBeSIREN('123456783')).toBe(false);
+    expect(lib.stringMustBeSIREN('123 456 782')).toBe(true);
+  });
 });
