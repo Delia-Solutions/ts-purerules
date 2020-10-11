@@ -35,6 +35,13 @@ function stringMustNotBeEmpty(value: string): boolean {
   return value !== '';
 }
 
+function stringMustContains (value: string, contain: string | Array<string>): boolean {
+  if (Array.isArray(contain)) {
+    return contain.every(v => value.includes(v));
+  }
+  return value.includes(contain);
+}
+
 function isLeapYear(year: string | number): boolean {
   // if year is a string, we need to cast the value to number
   const formattedYear = typeof year === 'string' ? +year : year;
@@ -51,6 +58,7 @@ export {
   arrayMustNotBeEmpty,
   stringMustBeValidEmail,
   numberMustBeMin,
+  stringMustContains,
   objectMustNotBeEmpty,
   stringMustBeAtLeastNCharacters,
   stringMustBeSimilarTo,
