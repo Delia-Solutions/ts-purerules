@@ -35,11 +35,11 @@ function stringMustNotBeEmpty(value: string): boolean {
   return value !== '';
 }
 
-function stringMustContains(value: string, contain: string | Array<string>): boolean {
-  if (Array.isArray(contain)) {
-    return contain.every(v => value.includes(v));
+function stringMustContainWords(value: string, words: string | Array<string>): boolean {
+  if (Array.isArray(words)) {
+    return words.every(v => value.includes(v));
   }
-  return value.includes(contain);
+  return value.includes(words);
 }
 
 function isLeapYear(year: string | number): boolean {
@@ -48,7 +48,7 @@ function isLeapYear(year: string | number): boolean {
   return (formattedYear % 4 === 0 && formattedYear % 100 !== 0) || formattedYear % 400 === 0;
 }
 
-function stringMustBeValidIpAddress(value: string) {
+function stringMustBeValidIPv4(value: string) {
   const re = /^((25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.){3}(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)$/;
   return re.test(value);
 }
@@ -85,7 +85,7 @@ export {
   arrayMustNotBeEmpty,
   stringMustBeValidEmail,
   numberMustBeMin,
-  stringMustContains,
+  stringMustContainWords,
   objectMustNotBeEmpty,
   stringMustBeAtLeastNCharacters,
   stringMustBeSimilarTo,
@@ -93,5 +93,5 @@ export {
   stringMustBeSIRET,
   stringMustBeSIREN,
   isLeapYear,
-  stringMustBeValidIpAddress,
+  stringMustBeValidIPv4,
 };
