@@ -76,15 +76,23 @@ const checksumLuhn = (value: string, size: number): boolean => {
   return sum % 10 === 0;
 };
 
+// DONT: the following 2 rules might be way too specific to be part of this lib.
+/**
+ * Checks if a string is a valid SIRET number (a french legal number).
+ */
 function stringMustBeSIRET(value: string): boolean {
   const size = 14;
   return checksumLuhn(value, size);
 }
 
+/**
+ * Checks if a string is a valid SIREN number (a french legal number).
+ */
 function stringMustBeSIREN(value: string): boolean {
   const size = 9;
   return checksumLuhn(value, size);
 }
+
 
 export {
   arrayMustNotBeEmpty,
