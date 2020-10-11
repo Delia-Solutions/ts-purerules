@@ -87,16 +87,16 @@ describe('Strings', () => {
   });
 
   it('string must be an IP', () => {
-    expect(lib.stringMustBeValidIpAddress('50.238.2.98')).toBe(true);
-    expect(lib.stringMustBeValidIpAddress('256.238.23.98')).toBe(false);
-    expect(lib.stringMustBeValidIpAddress('')).toBe(false);
+    expect(lib.stringMustBeValidIPv4('50.238.2.98')).toBe(true);
+    expect(lib.stringMustBeValidIPv4('256.238.23.98')).toBe(false);
+    expect(lib.stringMustBeValidIPv4('')).toBe(false);
   });
 
   it('string must contains', () => {
-    expect(lib.stringMustContains('hello world', 'world')).toBe(true);
-    expect(lib.stringMustContains('hello world', ['hello', 'world'])).toBe(true);
-    expect(lib.stringMustContains('hello', ['hello', 'world'])).toBe(false);
-    expect(lib.stringMustContains('hello world', 'hi')).toBe(false);
+    expect(lib.stringMustContainWords('hello world', 'world')).toBe(true);
+    expect(lib.stringMustContainWords('hello world', ['hello', 'world'])).toBe(true);
+    expect(lib.stringMustContainWords('hello', ['hello', 'world'])).toBe(false);
+    expect(lib.stringMustContainWords('hello world', 'hi')).toBe(false);
   });
 
   it('string must be SIRET', () => {
