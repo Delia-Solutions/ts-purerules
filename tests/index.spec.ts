@@ -122,4 +122,11 @@ describe('Strings', () => {
     expect(lib.stringMustBeValidIpAddress('256.238.23.98')).toBe(false);
     expect(lib.stringMustBeValidIpAddress('')).toBe(false);
   });
+
+  it('string must contains', () => {
+    expect(lib.stringMustContains('hello world', 'world')).toBe(true);
+    expect(lib.stringMustContains('hello world', ['hello', 'world'])).toBe(true);
+    expect(lib.stringMustContains('hello', ['hello', 'world'])).toBe(false);
+    expect(lib.stringMustContains('hello world', 'hi')).toBe(false);
+  });
 });
