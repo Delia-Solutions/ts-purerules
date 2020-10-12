@@ -75,6 +75,10 @@ if (pureRules.arrayMustNotBeEmpty(variable)) {
 - `stringMustNotBeEmpty(value: string)`: False if string is empty, true otherwise.
 
 
+## Contributing
+See [CONTRIBUTING.md](https://github.com/Delia-Solutions/ts-purerules/blob/master/CONTRIBUTING.md).
+
+
 ## License
 This software is distributed under the terms of the ISC License.
 The complete License is in the [LICENSE file](https://github.com/Delia-Solutions/ts-purerules/blob/master/LICENSE).
