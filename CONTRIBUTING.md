@@ -16,6 +16,7 @@ Here are the main directives to follow when contributing:
 
 - Discuss what you want to do with others before going all-in.
 - Fork the repository, and work on a new branch. Branch from `dev` if it exists, else `master`.
+- *__**Only use Yarn**__*.
 - Leave a writing trace of what you've done. Either in the form of code comments, or as text in commits.
 - Try to keep consistency in the codebase. Style is not that important, visual consistency is.
 - Comment your code. We're all too busy for comments, but they really are important.
