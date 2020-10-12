@@ -25,6 +25,37 @@ describe('Numbers', () => {
     expect(lib.numberMustBeMin(0, 8)).toBe(false);
     expect(lib.numberMustBeMin(0, -2)).toBe(true);
   });
+  it('number must be maximum', () => {
+    expect(lib.numberMustBeMax(5, 3)).toBe(false);
+    expect(lib.numberMustBeMax(3, 4)).toBe(true);
+    expect(lib.numberMustBeMax(2, 2)).toBe(true);
+    expect(lib.numberMustBeMax(-1, -13)).toBe(false);
+    expect(lib.numberMustBeMax(1.3443, 1)).toBe(false);
+    expect(lib.numberMustBeMax(-1.1, -1)).toBe(true);
+    expect(lib.numberMustBeMax(0, 8)).toBe(true);
+    expect(lib.numberMustBeMax(0, -2)).toBe(false);
+  });
+
+  it('number must be strictly min', () => {
+    expect(lib.numberMustBeStrictlyMin(5, 3)).toBe(true);
+    expect(lib.numberMustBeStrictlyMin(3, 4)).toBe(false);
+    expect(lib.numberMustBeStrictlyMin(2, 2)).toBe(false);
+    expect(lib.numberMustBeStrictlyMin(-1, -13)).toBe(true);
+    expect(lib.numberMustBeStrictlyMin(1.3443, 1)).toBe(true);
+    expect(lib.numberMustBeStrictlyMin(-1.1, -1)).toBe(false);
+    expect(lib.numberMustBeStrictlyMin(0, 8)).toBe(false);
+    expect(lib.numberMustBeStrictlyMin(0, -2)).toBe(true);
+  });
+  it('number must be strictly maximum', () => {
+    expect(lib.numberMustBeStrictlyMax(5, 3)).toBe(false);
+    expect(lib.numberMustBeStrictlyMax(3, 4)).toBe(true);
+    expect(lib.numberMustBeStrictlyMax(2, 2)).toBe(false);
+    expect(lib.numberMustBeStrictlyMax(-1, -13)).toBe(false);
+    expect(lib.numberMustBeStrictlyMax(1.3443, 1)).toBe(false);
+    expect(lib.numberMustBeStrictlyMax(-1.1, -1)).toBe(true);
+    expect(lib.numberMustBeStrictlyMax(0, 8)).toBe(true);
+    expect(lib.numberMustBeStrictlyMax(0, -2)).toBe(false);
+  });
 });
 
 describe('Date', () => {
@@ -91,5 +122,29 @@ describe('Strings', () => {
     expect(lib.stringMustBeValidEmail('he.llo@gmail.com')).toBe(true);
     expect(lib.stringMustBeValidEmail('h.e-l.lo@gmail.com')).toBe(true);
     expect(lib.stringMustBeValidEmail('.llo@gmail.com')).toBe(false);
+  });
+
+  it('string must be an IP', () => {
+    expect(lib.stringMustBeValidIPv4('50.238.2.98')).toBe(true);
+    expect(lib.stringMustBeValidIPv4('256.238.23.98')).toBe(false);
+    expect(lib.stringMustBeValidIPv4('')).toBe(false);
+  });
+
+  it('string must contains', () => {
+    expect(lib.stringMustContainWords('hello world', 'world')).toBe(true);
+    expect(lib.stringMustContainWords('hello world', ['hello', 'world'])).toBe(true);
+    expect(lib.stringMustContainWords('hello', ['hello', 'world'])).toBe(false);
+    expect(lib.stringMustContainWords('hello world', 'hi')).toBe(false);
+  });
+
+  it('string must be SIRET', () => {
+    expect(lib.stringMustBeSIRET('73282932000074')).toBe(true);
+    expect(lib.stringMustBeSIRET('732 829 320 000 74')).toBe(true);
+    expect(lib.stringMustBeSIRET('73282932100074')).toBe(false);
+  });
+  it('string must be SIREN', () => {
+    expect(lib.stringMustBeSIREN('123456782')).toBe(true);
+    expect(lib.stringMustBeSIREN('123456783')).toBe(false);
+    expect(lib.stringMustBeSIREN('123 456 782')).toBe(true);
   });
 });
