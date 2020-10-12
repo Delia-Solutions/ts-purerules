@@ -22,7 +22,10 @@ Here are the main directives to follow when contributing:
 - Have fun developing new features! It really means to us.
 - If tests exist, don't forget to run and fix them before marking your pull request as ready.
 - Write your commit message in the present tense. You should read your commit as: "When applied, this commit will" + your commit message. An example might be: "when applied, this commit will fix the user getting kicked problem".
+- If your PR is linked to an existing issue please add a reference to it in the PR and close it after the PR is merged.
 
+##### Mandatory steps!
+Before marking your PR as ready to be merged, you must run the `yarn lint` and `yarn test` scripts. It limits regression and help keep the style consistent (and sometimes assure better commit diffs).
 
 ### And one last thing
 
