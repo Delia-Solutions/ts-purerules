@@ -25,6 +25,37 @@ describe('Numbers', () => {
     expect(lib.numberMustBeMin(0, 8)).toBe(false);
     expect(lib.numberMustBeMin(0, -2)).toBe(true);
   });
+  it('number must be maximum', () => {
+    expect(lib.numberMustBeMax(5, 3)).toBe(false);
+    expect(lib.numberMustBeMax(3, 4)).toBe(true);
+    expect(lib.numberMustBeMax(2, 2)).toBe(true);
+    expect(lib.numberMustBeMax(-1, -13)).toBe(false);
+    expect(lib.numberMustBeMax(1.3443, 1)).toBe(false);
+    expect(lib.numberMustBeMax(-1.1, -1)).toBe(true);
+    expect(lib.numberMustBeMax(0, 8)).toBe(true);
+    expect(lib.numberMustBeMax(0, -2)).toBe(false);
+  });
+
+  it('number must be strictly min', () => {
+    expect(lib.numberMustBeStrictlyMin(5, 3)).toBe(true);
+    expect(lib.numberMustBeStrictlyMin(3, 4)).toBe(false);
+    expect(lib.numberMustBeStrictlyMin(2, 2)).toBe(false);
+    expect(lib.numberMustBeStrictlyMin(-1, -13)).toBe(true);
+    expect(lib.numberMustBeStrictlyMin(1.3443, 1)).toBe(true);
+    expect(lib.numberMustBeStrictlyMin(-1.1, -1)).toBe(false);
+    expect(lib.numberMustBeStrictlyMin(0, 8)).toBe(false);
+    expect(lib.numberMustBeStrictlyMin(0, -2)).toBe(true);
+  });
+  it('number must be strictly maximum', () => {
+    expect(lib.numberMustBeStrictlyMax(5, 3)).toBe(false);
+    expect(lib.numberMustBeStrictlyMax(3, 4)).toBe(true);
+    expect(lib.numberMustBeStrictlyMax(2, 2)).toBe(false);
+    expect(lib.numberMustBeStrictlyMax(-1, -13)).toBe(false);
+    expect(lib.numberMustBeStrictlyMax(1.3443, 1)).toBe(false);
+    expect(lib.numberMustBeStrictlyMax(-1.1, -1)).toBe(true);
+    expect(lib.numberMustBeStrictlyMax(0, 8)).toBe(true);
+    expect(lib.numberMustBeStrictlyMax(0, -2)).toBe(false);
+  });
 });
 
 describe('Date', () => {
