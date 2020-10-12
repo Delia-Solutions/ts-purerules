@@ -4,14 +4,14 @@ A library to validate stuff in pure TS. (It just means we delegate some work to 
 
 
 ## Installation
-Install it with either `npm`:
+Depending on the package manager your project uses, install it with either `npm`:
 ```
-npm install --save ts-purerules
+npm install --save @delia-solutions/ts-purerules
 ```
 
 or `yarn`:
 ```
-yarn add ts-purerules
+yarn add @delia-solutions/ts-purerules
 ```
 
 Then the way of importing it depends on your project's settings.
