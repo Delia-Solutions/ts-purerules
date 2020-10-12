@@ -59,21 +59,36 @@ if (pureRules.arrayMustNotBeEmpty(variable)) {
 ## Rules list
 - `arrayMustNotBeEmpty(value: Array<any>)`<br/>
   False if array is empty, true otherwise.
-- `isLeapYear(year: string | number)`: True if year is a leap year, false otherwise.
-- `numberMustBeMax(value: number, maxValue: number)`: False if number > max, true otherwise.
-- `numberMustBeMin(value: number, minValue: number)`: False if number < min, true otherwise.
-- `numberMustBeStrictlyMax(value: number, maxValue: number)`: False if number >= max, true otherwise.
-- `numberMustBeStrictlyMin(value: number, minValue: number)`: False if number <= min, true otherwise.
-- `objectMustNotBeEmpty(value: any)`: False if object is empty, true otherwise.
-- `stringMustBeAtLeastNCharacters(value: string, length: number)`: False if string is less than N characters, true otherwise.
-- `stringMustBeDifferentTo(value: string, other: string)`: False if string is the same as the other one, true otherwise.
-- `stringMustBeSIREN(value: string)`: False if the string doesn't describe a [SIREN number](https://en.wikipedia.org/wiki/SIREN_code), true otherwise.
-- `stringMustBeSIRET(value: string)`: False if the string doesn't describe a [SIRET number](https://en.wikipedia.org/wiki/SIRET_code), true otherwise.
-- `stringMustBeSimilarTo(value: string, other: string)`: True if string is the same as the other one, false otherwise.
-- `stringMustBeValidEmail(value: string)`: False if string doesn't describe a valid email, true otherwise.
-- `stringMustBeValidIPv4(value)`: False if string doesn't describe a valid IPv4 address, true otherwise.
-- `stringMustContainWords(value: string, words: string | Array<string >)`: False if string doesn't include every words as substrings, true otherwise.
-- `stringMustNotBeEmpty(value: string)`: False if string is empty, true otherwise.
+- `isLeapYear(year: string | number)`<br/>
+  True if year is a leap year, false otherwise.
+- `numberMustBeMax(value: number, maxValue: number)`<br/>
+  False if number > max, true otherwise.
+- `numberMustBeMin(value: number, minValue: number)`<br/>
+  False if number < min, true otherwise.
+- `numberMustBeStrictlyMax(value: number, maxValue: number)`<br/>
+  False if number >= max, true otherwise.
+- `numberMustBeStrictlyMin(value: number, minValue: number)`<br/>
+  False if number <= min, true otherwise.
+- `objectMustNotBeEmpty(value: any)`<br/>
+  False if object is empty, true otherwise.
+- `stringMustBeAtLeastNCharacters(value: string, length: number)`<br/>
+  False if string is less than N characters, true otherwise.
+- `stringMustBeDifferentTo(value: string, other: string)`<br/>
+  False if string is the same as the other one, true otherwise.
+- `stringMustBeSIREN(value: string)`<br/>
+  False if the string doesn't describe a [SIREN number](https://en.wikipedia.org/wiki/SIREN_code), true otherwise.
+- `stringMustBeSIRET(value: string)`<br/>
+  False if the string doesn't describe a [SIRET number](https://en.wikipedia.org/wiki/SIRET_code), true otherwise.
+- `stringMustBeSimilarTo(value: string, other: string)`<br/>
+  True if string is the same as the other one, false otherwise.
+- `stringMustBeValidEmail(value: string)`<br/>
+  False if string doesn't describe a valid email, true otherwise.
+- `stringMustBeValidIPv4(value)`<br/>
+  False if string doesn't describe a valid IPv4 address, true otherwise.
+- `stringMustContainWords(value: string, words: string | Array<string >)`<br/>
+  False if string doesn't include every words as substrings, true otherwise.
+- `stringMustNotBeEmpty(value: string)`<br/>
+  False if string is empty, true otherwise.
 
 
 ## Contributing
