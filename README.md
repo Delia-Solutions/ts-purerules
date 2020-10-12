@@ -57,7 +57,8 @@ if (pureRules.arrayMustNotBeEmpty(variable)) {
 
 
 ## Rules list
-- `arrayMustNotBeEmpty(value: Array<any>)`: False if array is empty, true otherwise.
+- `arrayMustNotBeEmpty(value: Array<any>)`<br/>
+  False if array is empty, true otherwise.
 - `isLeapYear(year: string | number)`: True if year is a leap year, false otherwise.
 - `numberMustBeMax(value: number, maxValue: number)`: False if number > max, true otherwise.
 - `numberMustBeMin(value: number, minValue: number)`: False if number < min, true otherwise.
