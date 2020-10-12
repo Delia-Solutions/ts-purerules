@@ -120,5 +120,4 @@ export {
   stringMustBeSIREN,
   isLeapYear,
   stringMustBeValidIPv4,
-  stringMustBeDifferentTo,
 };
