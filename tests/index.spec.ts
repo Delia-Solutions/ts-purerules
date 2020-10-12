@@ -147,4 +147,10 @@ describe('Strings', () => {
     expect(lib.stringMustBeSIREN('123456783')).toBe(false);
     expect(lib.stringMustBeSIREN('123 456 782')).toBe(true);
   });
+
+  it('string must be zipcode', () => {
+    expect(lib.stringMustBeZipCode('75013')).toBe(true);
+    expect(lib.stringMustBeZipCode('99123')).toBe(false);
+    expect(lib.stringMustBeZipCode('57000')).toBe(true);
+  });
 });

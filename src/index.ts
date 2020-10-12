@@ -107,6 +107,11 @@ function stringMustBeSIREN(value: string): boolean {
   return checksumLuhn(value, size);
 }
 
+// TODO: Adapt to every country
+function stringMustBeZipCode (value: string) {
+  const re = /^(?:[0-8]\d|9[0-8])\d{3}$/;
+  return re.test(value);
+}
 
 export {
   arrayMustNotBeEmpty,
@@ -123,6 +128,7 @@ export {
   stringMustBeSIRET,
   stringMustBeSIREN,
   isLeapYear,
-  stringMustBeValidIPv4,
   stringMustBeDifferentTo,
+  stringMustBeValidIPv4,
+  stringMustBeZipCode,
 };
