@@ -17,16 +17,16 @@ yarn add @delia-solutions/ts-purerules
 Then the way of importing it depends on your project's settings.
 ``` typescript
 // ES6 import style
-import * as pureRules from 'ts-purerules';
+import * as pureRules from '@delia-solutions/ts-purerules';
 
 // or you can import only the rules you want
-import { stringMustBeValidEmail } from 'ts-purerules';
-import { arrayMustNotBeEmpty, stringMustBeValidEmail } from 'ts-purerules';
+import { stringMustBeValidEmail } from '@delia-solutions/ts-purerules';
+import { arrayMustNotBeEmpty, stringMustBeValidEmail } from '@delia-solutions/ts-purerules';
 ```
 
 ``` typescript
 // Node require style
-const pureRules = require('ts-purerules');
+const pureRules = require('@delia-solutions/ts-purerules');
 ```
 
 
@@ -45,7 +45,7 @@ It has been well tested with [Vuetify](https://github.com/vuetifyjs/vuetify).
 You can simply use it by importing it, then testing your values against the rules you want.
 **Every rule returns a boolean**, so it is easy to use it.
 ```typescript
-import * as pureRules from 'ts-purerules';
+import * as pureRules from '@delia-solutions/ts-purerules';
 
 // value can come from anywhere
 const value = ['hello', 'world'];
