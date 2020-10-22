@@ -1,6 +1,6 @@
 {
   "name": "@delia-solutions/ts-purerules",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "TODO",
   "main": "dist/index.js",
   "module": "dist/index.es.js",
@@ -35,7 +35,7 @@
     "url": "https://github.com/Delia-Solutions/ts-purerules.git"
   },
   "publishConfig": {
-    "registry":"https://www.npmjs.com/package/@delia-solutions/ts-purerules"
+    "registry": "https://www.npmjs.com/package/@delia-solutions/ts-purerules"
   },
   "bugs": {
     "url": "https://github.com/Delia-Solutions/ts-purerules/issues"
