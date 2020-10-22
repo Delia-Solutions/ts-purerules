@@ -34,9 +34,6 @@
     "type": "git",
     "url": "https://github.com/Delia-Solutions/ts-purerules.git"
   },
-  "publishConfig": {
-    "registry": "https://www.npmjs.com/package/@delia-solutions/ts-purerules"
-  },
   "bugs": {
     "url": "https://github.com/Delia-Solutions/ts-purerules/issues"
   },
