@@ -32,7 +32,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/Delia-Solutions/ts-purerules.git"
+    "url": "git+https://github.com/Delia-Solutions/ts-purerules.git"
   },
   "bugs": {
     "url": "https://github.com/Delia-Solutions/ts-purerules/issues"
