@@ -57,6 +57,12 @@ if (pureRules.arrayMustNotBeEmpty(variable)) {
 
 
 ## Rules list
+- `mustNotBeNull(value: any)`<br/>
+  False if value is null.
+- `mustNotBeUndefined(value: any)`<br/>
+  False if value is undefined.
+- `mustNotBeNullOrUndefined(value: any)`<br/>
+  False if value is null or undefined.
 - `arrayMustNotBeEmpty(value: Array<any>)`<br/>
   False if array is empty, true otherwise.
 - `isLeapYear(year: string | number)`<br/>

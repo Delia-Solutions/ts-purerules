@@ -1,3 +1,15 @@
+function mustNotBeNull(value: any): boolean {
+  return value !== null;
+}
+
+function mustNotBeUndefined(value: any): boolean {
+  return value !== undefined;
+}
+
+function mustNotBeNullOrUndefined(value: any): boolean {
+  return mustNotBeNull(value) && mustNotBeUndefined(value);
+}
+
 function arrayMustNotBeEmpty(value: Array<any>): boolean {
   return (Array
     .from(value)
@@ -17,6 +29,7 @@ function stringMustBeValidEmail(value: string): boolean {
 function numberMustBeMin(value: number, minValue: number): boolean {
   return value >= minValue;
 }
+
 function numberMustBeMax(value: number, maxValue: number): boolean {
   return maxValue >= value;
 }
@@ -114,6 +127,9 @@ function stringMustBeZipCode (value: string) {
 }
 
 export {
+  mustNotBeNull,
+  mustNotBeUndefined,
+  mustNotBeNullOrUndefined,
   arrayMustNotBeEmpty,
   isLeapYear,
   numberMustBeMax,

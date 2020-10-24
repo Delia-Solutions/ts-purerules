@@ -1,5 +1,34 @@
 import * as lib from '../src/index';
 
+describe('Null', () => {
+  it('value must not be null', () => {
+    expect(lib.mustNotBeNull([])).toBe(true);
+    expect(lib.mustNotBeNull('')).toBe(true);
+    expect(lib.mustNotBeNull(0)).toBe(true);
+    expect(lib.mustNotBeNull(undefined)).toBe(true);
+    expect(lib.mustNotBeNull(null)).toBe(false);
+  });
+});
+
+describe('Undefined', () => {
+  it('value must not be undefined', () => {
+    expect(lib.mustNotBeUndefined([])).toBe(true);
+    expect(lib.mustNotBeUndefined('')).toBe(true);
+    expect(lib.mustNotBeUndefined(0)).toBe(true);
+    expect(lib.mustNotBeUndefined(null)).toBe(true);
+    expect(lib.mustNotBeUndefined(undefined)).toBe(false);
+  });
+});
+
+describe('Null or Undefined', () => {
+  it('value must not be null or undefined', () => {
+    expect(lib.mustNotBeNullOrUndefined([])).toBe(true);
+    expect(lib.mustNotBeNullOrUndefined('')).toBe(true);
+    expect(lib.mustNotBeNullOrUndefined(0)).toBe(true);
+    expect(lib.mustNotBeNullOrUndefined(null)).toBe(false);
+    expect(lib.mustNotBeNullOrUndefined(undefined)).toBe(false);
+  });
+});
 
 describe('Arrays', () => {
   it('array must not be empty', () => {
