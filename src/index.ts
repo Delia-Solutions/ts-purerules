@@ -146,5 +146,5 @@ export {
   stringMustBeValidIPv4,
   stringMustContainWords,
   stringMustNotBeEmpty,
-  stringMustBeZipCode,
+  stringMustBeZipCode
 };

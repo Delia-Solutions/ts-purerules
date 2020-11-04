@@ -2,13 +2,18 @@
   "name": "@delia-solutions/ts-purerules",
   "version": "1.0.5",
   "description": "TODO",
-  "main": "dist/index.js",
-  "module": "dist/index.es.js",
-  "types": "dist/index.d.ts",
+  "main": "js/index.js",
+  "types": "es/index.d.ts",
+  "module": "es/index.js",
   "scripts": {
-    "build": "rollup -c && tsc",
+    "clean": "rimraf ./es ./js",
+    "tsc": "tsc",
+    "build": "yarn run tsc && yarn run babel",
+    "babel": "babel --source-maps -d js es",
     "lint": "eslint src --fix --ext .js,.ts",
-    "test": "jest -c jest.config.js tests"
+    "test": "jest -c jest.config.js tests",
+    "compile": "yarn run tsc && yarn run babel",
+    "prepublish": "yarn run clean && yarn run lint && yarn run build"
   },
   "keywords": [
     "delia",
@@ -19,14 +24,19 @@
   "author": "Delia Solutions <tech@delia-solutions.com> (https://delia-solutions.com)",
   "license": "ISC",
   "devDependencies": {
+    "@babel/cli": "^7.10.1",
+    "@babel/core": "^7.10.2",
+    "@babel/plugin-proposal-class-properties": "^7.12.1",
+    "@babel/plugin-proposal-object-rest-spread": "^7.12.1",
+    "@babel/plugin-transform-runtime": "^7.10.1",
+    "@babel/preset-env": "^7.12.1",
+    "@babel/preset-typescript": "^7.12.1",
+    "@babel/runtime": "^7.10.2",
     "@types/jest": "^26.0.14",
     "@typescript-eslint/eslint-plugin": "^4.4.0",
     "@typescript-eslint/parser": "^4.4.0",
     "eslint": "^7.10.0",
     "jest": "^26.5.0",
-    "rollup": "^2.23.1",
-    "rollup-plugin-terser": "^7.0.0",
-    "rollup-plugin-typescript2": "^0.27.2",
     "ts-jest": "^26.4.1",
     "typescript": "^3.9.7"
   },
@@ -37,5 +47,6 @@
   "bugs": {
     "url": "https://github.com/Delia-Solutions/ts-purerules/issues"
   },
-  "homepage": "https://github.com/Delia-Solutions/ts-purerules#readme"
+  "homepage": "https://github.com/Delia-Solutions/ts-purerules#readme",
+  "dependencies": {}
 }
