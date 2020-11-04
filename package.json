@@ -1,6 +1,6 @@
 {
   "name": "@delia-solutions/ts-purerules",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "description": "TODO",
   "main": "js/index.js",
   "types": "es/index.d.ts",
