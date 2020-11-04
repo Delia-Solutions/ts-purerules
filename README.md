@@ -68,13 +68,13 @@ if (pureRules.arrayMustNotBeEmpty(variable)) {
 - `isLeapYear(year: string | number)`<br/>
   True if year is a leap year, false otherwise.
 - `numberMustBeMax(value: number, maxValue: number)`<br/>
-  False if number > max, true otherwise.
-- `numberMustBeMin(value: number, minValue: number)`<br/>
-  False if number < min, true otherwise.
-- `numberMustBeStrictlyMax(value: number, maxValue: number)`<br/>
   False if number >= max, true otherwise.
-- `numberMustBeStrictlyMin(value: number, minValue: number)`<br/>
+- `numberMustBeMin(value: number, minValue: number)`<br/>
   False if number <= min, true otherwise.
+- `numberMustBeStrictlyMax(value: number, maxValue: number)`<br/>
+  False if number > max, true otherwise.
+- `numberMustBeStrictlyMin(value: number, minValue: number)`<br/>
+  False if number < min, true otherwise.
 - `objectMustNotBeEmpty(value: any)`<br/>
   False if object is empty, true otherwise.
 - `stringMustBeAtLeastNCharacters(value: string, length: number)`<br/>
